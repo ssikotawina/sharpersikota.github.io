@@ -1,1 +1,872 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sharper Sikota | Health Services Researcher</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
 
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 17px;
+    line-height: 1.75;
+    color: #1a1a1a;
+    background: #ffffff;
+  }
+
+  a { color: #1a5276; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .container {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  /* ── NAV ── */
+  nav {
+    border-bottom: 1px solid #e0e0e0;
+    background: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .nav-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 56px;
+  }
+
+  .nav-brand {
+    font-family: 'Source Serif 4', serif;
+    font-size: 1.15rem;
+    font-weight: 400;
+    color: #1a1a1a;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 1.8rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 0.9rem;
+    color: #444;
+    font-weight: 400;
+  }
+
+  .nav-links a:hover {
+    color: #1a5276;
+    text-decoration: none;
+  }
+
+  .nav-cv-link {
+    font-size: 0.88rem;
+    color: #1a5276;
+    font-weight: 500;
+    border: 1px solid #1a5276;
+    padding: 0.3rem 0.85rem;
+  }
+
+  .nav-cv-link:hover {
+    background: #1a5276;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  /* ── HERO ── */
+  #hero {
+    padding: 4rem 0 3rem;
+    border-bottom: 1px solid #e0e0e0;
+    background: #ffffff;
+  }
+
+  .hero-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .hero-name {
+    font-family: 'Source Serif 4', serif;
+    font-size: 2.2rem;
+    font-weight: 400;
+    color: #1a1a1a;
+    margin-bottom: 0.3rem;
+    line-height: 1.2;
+  }
+
+  .hero-title {
+    font-size: 1.05rem;
+    color: #444;
+    margin-bottom: 0.2rem;
+  }
+
+  .hero-affil {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 1.8rem;
+  }
+
+  .hero-bio {
+    font-size: 1.05rem;
+    color: #2c2c2c;
+    max-width: 700px;
+    line-height: 1.8;
+    margin-bottom: 1.8rem;
+  }
+
+  .hero-credentials {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    margin-bottom: 1.8rem;
+  }
+
+  .hero-credential {
+    font-size: 0.95rem;
+    color: #444;
+  }
+
+  .hero-credential::before {
+    content: '·  ';
+    color: #1a5276;
+  }
+
+  .hero-links {
+    display: flex;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+  }
+
+  .hero-links a {
+    font-size: 0.92rem;
+    color: #1a5276;
+    border-bottom: 1px solid #b0c4d8;
+    padding-bottom: 1px;
+  }
+
+  .hero-links a:hover {
+    border-bottom-color: #1a5276;
+    text-decoration: none;
+  }
+
+  /* ── SECTIONS ── */
+  section {
+    padding: 3.5rem 0;
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  section:nth-child(even) {
+    background: #f9fbfc;
+  }
+
+  section:last-of-type { border-bottom: none; }
+
+  .section-title {
+    font-family: 'Source Serif 4', serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #1a1a1a;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #1a5276;
+    display: inline-block;
+  }
+
+  /* ── ABOUT ── */
+  .about-block {
+    margin-bottom: 1.8rem;
+  }
+
+  .about-block-title {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #1a5276;
+    margin-bottom: 0.5rem;
+  }
+
+  .about-block p {
+    font-size: 1rem;
+    color: #2c2c2c;
+    line-height: 1.8;
+    max-width: 700px;
+  }
+
+  .about-block p + p { margin-top: 0.8rem; }
+  .about-block p strong { color: #1a1a1a; font-weight: 600; }
+  .about-block p em { font-style: italic; color: #1a1a1a; }
+
+  .about-future-box {
+    background: #f7f9fb;
+    border-left: 3px solid #1a5276;
+    padding: 1.2rem 1.4rem;
+    margin-top: 0.5rem;
+    max-width: 700px;
+  }
+
+  .about-future-box p {
+    font-size: 1rem;
+    color: #2c2c2c;
+    line-height: 1.8;
+  }
+
+  /* ── RESEARCH ── */
+  .research-intro {
+    font-size: 1rem;
+    color: #2c2c2c;
+    line-height: 1.8;
+    max-width: 700px;
+    margin-bottom: 2rem;
+  }
+
+  .research-themes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: #e0e0e0;
+    border: 1px solid #e0e0e0;
+    margin-bottom: 2.5rem;
+  }
+
+  .theme-card {
+    background: #fff;
+    padding: 1.4rem 1.2rem;
+  }
+
+  .theme-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #1a5276;
+    margin-bottom: 0.4rem;
+  }
+
+  .theme-name {
+    font-size: 0.97rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 0.4rem;
+    line-height: 1.35;
+  }
+
+  .theme-desc {
+    font-size: 0.88rem;
+    color: #555;
+    line-height: 1.65;
+  }
+
+  .papers-title {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #444;
+    margin-bottom: 1.2rem;
+  }
+
+  .paper-item {
+    border-top: 1px solid #e0e0e0;
+    padding: 1.4rem 0;
+  }
+
+  .paper-item:last-child { border-bottom: 1px solid #e0e0e0; }
+
+  .paper-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 0.3rem;
+    line-height: 1.4;
+  }
+
+  .paper-meta {
+    font-size: 0.88rem;
+    color: #666;
+    margin-bottom: 0.6rem;
+    font-style: italic;
+  }
+
+  .paper-desc {
+    font-size: 0.95rem;
+    color: #333;
+    line-height: 1.75;
+    max-width: 700px;
+    margin-bottom: 0.6rem;
+  }
+
+  .paper-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .paper-tag {
+    font-size: 0.75rem;
+    color: #1a5276;
+    background: #eaf0f6;
+    padding: 0.18rem 0.55rem;
+    border-radius: 2px;
+  }
+
+  /* ── PUBLICATIONS ── */
+  .pub-item {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 1rem;
+    padding: 1.1rem 0;
+    border-top: 1px solid #e0e0e0;
+  }
+
+  .pub-item:last-child { border-bottom: 1px solid #e0e0e0; }
+
+  .pub-year {
+    font-size: 0.88rem;
+    color: #888;
+    padding-top: 0.1rem;
+  }
+
+  .pub-title {
+    font-size: 1rem;
+    color: #1a1a1a;
+    font-weight: 500;
+    margin-bottom: 0.2rem;
+    line-height: 1.45;
+  }
+
+  .pub-authors {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 0.15rem;
+  }
+
+  .pub-journal {
+    font-size: 0.88rem;
+    color: #1a5276;
+    font-style: italic;
+  }
+
+  /* ── TEACHING ── */
+  .teach-block { margin-bottom: 2rem; }
+
+  .teach-institution {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 0.1rem;
+  }
+
+  .teach-location {
+    font-size: 0.88rem;
+    color: #888;
+    margin-bottom: 0.7rem;
+  }
+
+  .course-list { list-style: none; }
+
+  .course-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 0.35rem 0;
+    border-bottom: 1px solid #f0f0f0;
+    gap: 1rem;
+  }
+
+  .course-name { font-size: 0.95rem; color: #333; }
+  .course-code { font-size: 0.82rem; color: #999; white-space: nowrap; }
+
+  /* ── SKILLS ── */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .skill-block-title {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #1a5276;
+    margin-bottom: 0.7rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  .skill-list { list-style: none; }
+
+  .skill-list li {
+    font-size: 0.95rem;
+    color: #333;
+    padding: 0.3rem 0;
+    border-bottom: 1px solid #f5f5f5;
+    display: flex;
+    gap: 0.5rem;
+    align-items: baseline;
+  }
+
+  .skill-list li::before {
+    content: '·';
+    color: #1a5276;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+
+  /* ── AWARDS ── */
+  .award-item {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 1rem;
+    padding: 1rem 0;
+    border-top: 1px solid #e0e0e0;
+  }
+
+  .award-item:last-child { border-bottom: 1px solid #e0e0e0; }
+
+  .award-period { font-size: 0.88rem; color: #888; padding-top: 0.1rem; }
+  .award-name { font-size: 1rem; font-weight: 600; color: #1a1a1a; margin-bottom: 0.2rem; }
+  .award-desc { font-size: 0.92rem; color: #555; line-height: 1.65; }
+
+  /* ── CONTACT ── */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+
+  .contact-block-title {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 0.5rem;
+  }
+
+  .contact-block p {
+    font-size: 0.97rem;
+    color: #333;
+    line-height: 1.75;
+    margin-bottom: 0.3rem;
+  }
+
+  .contact-block a { color: #1a5276; }
+
+  /* ── FOOTER ── */
+  footer {
+    padding: 1.5rem 0;
+    border-top: 1px solid #e0e0e0;
+    background: #fafafa;
+  }
+
+  .footer-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-copy { font-size: 0.82rem; color: #999; }
+
+  /* ── REVEAL ── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 700px) {
+    .nav-links { display: none; }
+    .research-themes, .skills-grid, .contact-grid { grid-template-columns: 1fr; }
+    .pub-item, .award-item { grid-template-columns: 1fr; gap: 0.3rem; }
+    .hero-name { font-size: 1.7rem; }
+  }
+
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <span class="nav-brand">Sharper Sikota</span>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#teaching">Teaching</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a class="nav-cv-link" href="cv.pdf" target="_blank">Download CV</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-inner">
+    <h1 class="hero-name">Sharper Sikota</h1>
+    <p class="hero-title">PhD Student in Health Economics · Fulbright Scholar</p>
+    <p class="hero-affil">University of Colorado Denver | Anschutz Medical Campus</p>
+
+    <p class="hero-bio">
+      I am a health services researcher in training whose work examines how health systems, piped water access, and financial protection policies shape access to care and health outcomes in low- and middle-income countries — particularly in Zambia and Sub-Saharan Africa. My research combines quasi-experimental and doubly robust methods with policy-relevant questions in child health, health systems strengthening, and health insurance.
+    </p>
+
+    <div class="hero-credentials">
+      <span class="hero-credential">PhD Health Economics, University of Colorado Denver, 2024–present (Fulbright Scholar)</span>
+      <span class="hero-credential">MSc International Public Health, Liverpool John Moores University, 2019 (Chevening Scholar)</span>
+      <span class="hero-credential">MA Economics, University of Zambia, 2016 (Bank of Zambia Scholar)</span>
+      <span class="hero-credential">BA Economics &amp; Demography, University of Zambia, 2013</span>
+    </div>
+
+    <div class="hero-links">
+      <a href="#research">Working Papers</a>
+      <a href="#publications">Publications</a>
+      <a href="cv.pdf" target="_blank">Curriculum Vitae (PDF)</a>
+      <a href="mailto:sikotasharper@gmail.com">Email</a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <h2 class="section-title">About</h2>
+
+    <div class="about-block reveal">
+      <p class="about-block-title">Background</p>
+      <p>I am a PhD student in Health Economics at the University of Colorado Denver and a <strong>Fulbright Scholar</strong>. My academic training spans economics and international public health — a foundation that positions me at the intersection of rigorous empirical methods and policy-relevant health systems research. Before beginning my PhD, I worked for over a decade as a lecturer, health economist, and research consultant across Sub-Saharan Africa on projects funded by <strong>USAID, UNITAID, the Global Fund</strong>, and the UK Foreign Commonwealth and Development Office. These experiences ground my research in the practical realities of health systems in low-income countries and continue to shape my research agenda.</p>
+    </div>
+
+    <div class="about-block reveal">
+      <p class="about-block-title">Research Focus</p>
+      <p>I am developing as a <strong>health services researcher</strong> focused on evaluating how health systems, piped water access, and financial protection policies affect access to care, healthcare utilization, and health outcomes — particularly in Zambia and Sub-Saharan Africa. My research is organized around one central question: <em>How can health systems and public policies reduce health inequalities and improve outcomes for vulnerable populations in resource-constrained settings?</em></p>
+      <p>This research agenda is organized around three connected areas: <strong>early-life health and child nutrition</strong>, examining how birth conditions shape long-term health trajectories and whether postnatal interventions can interrupt cycles of undernutrition; <strong>health systems and infrastructure</strong>, evaluating whether expansions in piped water access produce measurable gains in child health outcomes; and <strong>health insurance and financial protection</strong>, assessing whether Zambia's National Health Insurance Management Authority (NHIMA) accreditation improves healthcare utilization and reduces out-of-pocket expenditure burdens.</p>
+      <p>I am becoming a health services researcher specializing in the evaluation of health systems, infrastructure, and financial protection policies using causal inference methods — with a long-term commitment to producing evidence that is directly relevant to policy and practice in Sub-Saharan Africa.</p>
+    </div>
+
+    <div class="about-block reveal">
+      <p class="about-block-title">Methods</p>
+      <p>I specialize in <strong>causal inference using quasi-experimental and doubly robust methods</strong>, applying regression discontinuity, difference-in-differences, and Augmented Inverse Probability Weighting (AIPW) estimators to large-scale Demographic and Health Survey (DHS) data and administrative datasets. I am developing expertise in health policy evaluation and econometric methods for health services research through coursework, seminars, and dissertation work at CU Denver's Anschutz Medical Campus.</p>
+    </div>
+
+    <div class="about-block reveal">
+      <p class="about-block-title">Collaboration</p>
+      <p>I am a <strong>strong collaborator</strong>, bringing experience in interdisciplinary research, program evaluation, and working with large-scale health data across multiple country contexts in Sub-Saharan Africa. I have served as health economist, evaluation team lead, and data analyst on multi-country studies — experience that has strengthened my ability to work across disciplines, institutions, and sectors. My work is directly relevant to organizations such as the <strong>World Bank, WHO, USAID, NIH Fogarty International Center, the Global Fund</strong>, and Ministries of Health, as well as academic institutions focused on global health and development economics.</p>
+    </div>
+
+    <div class="about-block reveal">
+      <p class="about-block-title">Future Goals</p>
+      <div class="about-future-box">
+        <p>My future research will focus on strengthening health systems in Sub-Saharan Africa through the evaluation of insurance systems, service delivery reforms, and early-life interventions — contributing to institutions at the intersection of academic research and applied health policy. I am actively developing expertise in administrative data linkage, machine learning applications for causal inference, health technology assessment (HTA), and academic grant writing for NIH and Fogarty International Center. My long-term goal is to produce research that directly informs health system strengthening and financial protection policy in resource-constrained settings, and to mentor the next generation of health economists working on low- and middle-income country health systems.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- RESEARCH -->
+<section id="research">
+  <div class="container">
+    <h2 class="section-title">Research</h2>
+
+    <p class="research-intro">My research evaluates health systems, piped water access, and financial protection policies to estimate their effects on health outcomes and inequalities in low- and middle-income countries. I use quasi-experimental and doubly robust designs applied to large-scale survey and administrative data.</p>
+
+    <div class="research-themes reveal">
+      <div class="theme-card">
+        <p class="theme-label">Theme I</p>
+        <p class="theme-name">Early-Life Health &amp; Child Nutrition</p>
+        <p class="theme-desc">How birth conditions and postnatal interventions shape long-term child health trajectories and human capital outcomes in low-resource settings.</p>
+      </div>
+      <div class="theme-card">
+        <p class="theme-label">Theme II</p>
+        <p class="theme-name">Sanitation, Infrastructure &amp; Child Health</p>
+        <p class="theme-desc">Whether access to improved sanitation reduces child stunting and undernutrition in Zambia, using doubly robust methods applied to pooled DHS cross-sectional data.</p>
+      </div>
+      <div class="theme-card">
+        <p class="theme-label">Theme III</p>
+        <p class="theme-name">Health Insurance &amp; Financial Protection</p>
+        <p class="theme-desc">How NHIMA accreditation and insurance expansions affect healthcare utilization, service delivery quality, and out-of-pocket expenditure burdens.</p>
+      </div>
+    </div>
+
+    <p class="papers-title">Working Papers &amp; Research in Progress</p>
+
+    <div class="paper-item reveal">
+      <p class="paper-title">Unequal Beginnings: Do Postnatal Interventions for Low-Birth-Weight Infants Reduce Child Stunting?</p>
+      <p class="paper-meta">Evidence from a Fuzzy Regression Discontinuity Design · Zambia DHS 2018</p>
+      <p class="paper-desc">This paper uses the 2500g birthweight threshold as the basis for a fuzzy regression discontinuity design to estimate the causal effect of postnatal interventions on child stunting in Zambia. The study addresses measurement challenges including birthweight heaping, misclassification, and sorting around the cutoff, contributing policy-relevant evidence on the effectiveness of targeted early-life interventions in low-resource settings.</p>
+      <div class="paper-tags">
+        <span class="paper-tag">Fuzzy RD Design</span>
+        <span class="paper-tag">Child Nutrition</span>
+        <span class="paper-tag">Zambia DHS 2018</span>
+        <span class="paper-tag">Low Birth Weight</span>
+      </div>
+    </div>
+
+    <div class="paper-item reveal">
+      <p class="paper-title">Do Improved Sanitation Reduce Child Stunting in Zambia?</p>
+      <p class="paper-meta">Evidence from Doubly Robust Estimation · Zambia DHS 2007, 2013/14, and 2018</p>
+      <p class="paper-desc">This study uses three pooled cross-sectional waves of the Zambia Demographic and Health Survey (2007, 2013/14, and 2018) to estimate the effect of household access to improved sanitation on child stunting. The study employs a doubly robust Augmented Inverse Probability Weighting (AIPW) estimator, which combines propensity score weighting with outcome regression to yield consistent estimates of the Average Treatment Effect (ATE). The paper contributes new causal evidence on the role of sanitation in shaping child growth outcomes in Zambia, with direct relevance for WASH policy, nutrition programming, and the Sustainable Development Goals.</p>
+      <div class="paper-tags">
+        <span class="paper-tag">Doubly Robust AIPW</span>
+        <span class="paper-tag">Improved Sanitation</span>
+        <span class="paper-tag">DHS Repeated Cross-Sections</span>
+        <span class="paper-tag">Child Stunting · Zambia</span>
+      </div>
+    </div>
+
+    <div class="paper-item reveal">
+      <p class="paper-title">NHIMA Accreditation and Healthcare Utilization in Zambia</p>
+      <p class="paper-meta">Administrative &amp; Facility-Level Data · Health Systems Strengthening</p>
+      <p class="paper-desc">This study uses administrative and facility-level data to assess whether accreditation under Zambia's National Health Insurance Management Authority improves healthcare utilization and service quality. The paper contributes to the literature on health insurance expansion in LMICs and provides evidence on whether accreditation mechanisms can strengthen health system performance and financial protection.</p>
+      <div class="paper-tags">
+        <span class="paper-tag">Health Insurance</span>
+        <span class="paper-tag">Administrative Data</span>
+        <span class="paper-tag">NHIMA · Zambia</span>
+        <span class="paper-tag">Health System Strengthening</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PUBLICATIONS -->
+<section id="publications">
+  <div class="container">
+    <h2 class="section-title">Publications</h2>
+
+    <div class="pub-item reveal">
+      <span class="pub-year">2025</span>
+      <div>
+        <p class="pub-title">Determinants, Impact and Optimal Resource Allocation of Zambia's Scaling Up Nutrition Program</p>
+        <p class="pub-authors">Ann L., Sikota S., Athena P.</p>
+        <p class="pub-journal">Maternal and Child Health Journal · Springer Nature</p>
+      </div>
+    </div>
+
+    <div class="pub-item reveal">
+      <span class="pub-year">2024</span>
+      <div>
+        <p class="pub-title">The Effects of Early Marriages on Academic Performance of Marginalized Girls in Secondary Schools of Central Province in Zambia</p>
+        <p class="pub-authors">Sikota S., Evans C. S., Mwiya M. S., Bowa M.</p>
+        <p class="pub-journal">BMC Public Health · Springer Nature</p>
+      </div>
+    </div>
+
+    <div class="pub-item reveal">
+      <span class="pub-year">2021</span>
+      <div>
+        <p class="pub-title">Can Digital Health Interventions Improve Adherence to Antiretroviral Therapy for Patients Living with HIV/AIDS in Sub-Saharan Africa? A Systematic Review</p>
+        <p class="pub-authors">Sikota S., Evans C. S., Mwiya M. S., Muduli R., Phiri B.</p>
+        <p class="pub-journal">Global Journal of Health Science, 13(12), 81</p>
+      </div>
+    </div>
+
+    <div class="pub-item reveal">
+      <span class="pub-year">2020</span>
+      <div>
+        <p class="pub-title">Cost and Impact of Dried Blood Spot Versus Plasma Separation Card for Scale-Up of Viral Load Testing in Resource-Limited Settings</p>
+        <p class="pub-authors">Brooke N., Sikota S., Girdwood S., Mwananyanda L., Gill C., Stevens W., Scott L., Rosen S.</p>
+        <p class="pub-journal">Clinical Infectious Diseases</p>
+      </div>
+    </div>
+
+    <div class="pub-item reveal">
+      <span class="pub-year">Under Review</span>
+      <div>
+        <p class="pub-title">Risk Factors of Maternal Mortality among Adolescents in Sub-Saharan Africa: A Systematic Review</p>
+        <p class="pub-authors">Sikota S., Sankhwa C., Evans B., Phiri B.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- TEACHING -->
+<section id="teaching">
+  <div class="container">
+    <h2 class="section-title">Teaching</h2>
+
+    <div class="teach-block reveal">
+      <p class="teach-institution">University of Colorado Denver</p>
+      <p class="teach-location">Denver, USA · 2024–Present</p>
+      <ul class="course-list">
+        <li class="course-item"><span class="course-name">Intermediate Microeconomics</span><span class="course-code">ECON 4071</span></li>
+        <li class="course-item"><span class="course-name">Principles of Microeconomics</span><span class="course-code">ECON 2022</span></li>
+        <li class="course-item"><span class="course-name">Industrial Organization</span><span class="course-code">ECON 4740</span></li>
+      </ul>
+    </div>
+
+    <div class="teach-block reveal">
+      <p class="teach-institution">Kwame Nkrumah University</p>
+      <p class="teach-location">Kabwe, Zambia · 2021–2024</p>
+      <ul class="course-list">
+        <li class="course-item"><span class="course-name">Health Economics</span><span class="course-code">BEC 4782</span></li>
+        <li class="course-item"><span class="course-name">Advanced Microeconomics</span><span class="course-code">BEC 3701</span></li>
+        <li class="course-item"><span class="course-name">Intermediate Microeconomics</span><span class="course-code">BEC 2701</span></li>
+        <li class="course-item"><span class="course-name">Mathematics for Economics</span><span class="course-code">BEC 2761</span></li>
+        <li class="course-item"><span class="course-name">Introduction to Microeconomics</span><span class="course-code">BEC 1701</span></li>
+        <li class="course-item"><span class="course-name">Introduction to Macroeconomics</span><span class="course-code">BEC 1702</span></li>
+      </ul>
+    </div>
+
+    <div class="teach-block reveal">
+      <p class="teach-institution">University of Zambia</p>
+      <p class="teach-location">Lusaka, Zambia · 2013–2015</p>
+      <ul class="course-list">
+        <li class="course-item"><span class="course-name">Mathematics for Economics</span><span class="course-code">ECN 2311</span></li>
+        <li class="course-item"><span class="course-name">Principles of Microeconomics</span><span class="course-code">ECN 1115</span></li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="container">
+    <h2 class="section-title">Skills &amp; Expertise</h2>
+    <div class="skills-grid">
+
+      <div class="reveal">
+        <p class="skill-block-title">Current Strengths</p>
+        <ul class="skill-list">
+          <li>Regression Discontinuity Design</li>
+          <li>Difference-in-Differences</li>
+          <li>Doubly Robust AIPW Estimation</li>
+          <li>Applied Microeconometrics</li>
+          <li>Survey Data Analysis (DHS)</li>
+          <li>Cost-Effectiveness Analysis</li>
+          <li>Systematic Review &amp; Meta-Analysis</li>
+        </ul>
+      </div>
+
+      <div class="reveal">
+        <p class="skill-block-title">Programming &amp; Software</p>
+        <ul class="skill-list">
+          <li>Stata (primary)</li>
+          <li>R</li>
+          <li>Python</li>
+          <li>SAS · SPSS · EViews</li>
+          <li>LaTeX</li>
+          <li>ODK · SurveyCTO · CS-PRO</li>
+        </ul>
+      </div>
+
+      <div class="reveal">
+        <p class="skill-block-title">Skills I Am Developing</p>
+        <ul class="skill-list">
+          <li>Administrative data linkage</li>
+          <li>Machine learning for causal inference</li>
+          <li>Health technology assessment (HTA)</li>
+          <li>Structural econometric modeling</li>
+          <li>NIH / Fogarty grant writing</li>
+          <li>Peer review &amp; academic collaboration</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- AWARDS -->
+<section id="awards">
+  <div class="container">
+    <h2 class="section-title">Awards &amp; Funding</h2>
+
+    <div class="award-item reveal">
+      <span class="award-period">2024–2029</span>
+      <div>
+        <p class="award-name">Fulbright Scholarship</p>
+        <p class="award-desc">Sponsored by the U.S. Department of State to pursue a PhD in Health Economics at the University of Colorado Denver. Awarded on the basis of academic merit and potential for leadership in health research.</p>
+      </div>
+    </div>
+
+    <div class="award-item reveal">
+      <span class="award-period">2018–2019</span>
+      <div>
+        <p class="award-name">Chevening Scholarship</p>
+        <p class="award-desc">UK government's flagship global scholarship, funding postgraduate study (MSc International Public Health) at Liverpool John Moores University, awarded to future leaders from Zambia.</p>
+      </div>
+    </div>
+
+    <div class="award-item reveal">
+      <span class="award-period">2014–2017</span>
+      <div>
+        <p class="award-name">Bank of Zambia Scholarship</p>
+        <p class="award-desc">Awarded by the Bank of Zambia for graduate study in Economics (MA) at the University of Zambia, in recognition of academic excellence and potential contribution to economic research and policy.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <h2 class="section-title">Contact</h2>
+    <div class="contact-grid reveal">
+      <div class="contact-block">
+        <p class="contact-block-title">Email</p>
+        <p><a href="mailto:sikotasharper@gmail.com">sikotasharper@gmail.com</a></p>
+        <p><a href="mailto:sharper.sikota@fulbrightmail.org">sharper.sikota@fulbrightmail.org</a></p>
+        <br>
+        <p class="contact-block-title">Institution</p>
+        <p>Department of Health Economics<br>University of Colorado Denver<br>Anschutz Medical Campus<br>Denver, Colorado, USA</p>
+      </div>
+      <div class="contact-block">
+        <p class="contact-block-title">Curriculum Vitae</p>
+        <p><a href="cv.pdf" target="_blank">Download CV (PDF)</a></p>
+
+        <br>
+        <p class="contact-block-title">Research Interests</p>
+        <p>I welcome inquiries about research collaboration, seminar invitations, and opportunities in health economics and health policy in LMICs.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <span class="footer-copy">© 2025 Sharper Sikota · University of Colorado Denver</span>
+    <span class="footer-copy">Last updated: April 2026</span>
+  </div>
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 60);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.06 });
+  reveals.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
